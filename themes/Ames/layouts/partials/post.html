@@ -1,0 +1,49 @@
+<div class="tile is-child box is-info">
+  <a href="{{ .RelPermalink }}">
+
+<figure class="image">
+{{if .Params.imagen_titulo}}
+      <img src="{{.RelPermalink}}{{.Params.imagen_titulo}}" alt="{{.Params.imagen_alt}}" class="image lazyautosizes ls-is-cached lazyloaded">
+{{else}}
+<img src="/images/logo.png" alt="No hay imagen asignada" class="image lazyautosizes ls-is-cached lazyloaded">
+{{end}}
+</figure>
+<hr>
+<h1 class="title is-4">
+  {{ .Title | title }}
+</h1>
+</a>
+    <div class="level is-mobile details">
+
+      <div class="level-left">
+
+          {{ if or .Params.showDate .Site.Params.showDate }}
+          <div class="level-item">
+            <p class="subtitle info date is-7">{{ partial "fecha.html" .Date . }}</p>
+          </div>
+          {{ end }}
+
+          <div class="level-item">
+            <p class="subtitle info is-7">{{ partial "time-to-read.html" . }} </p>
+          </div>
+
+      </div>
+
+      <div class="level-left is-hidden-touch">
+          {{ range .Params.tags }}
+          <a class="tag" href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . | title }}</a>
+          {{ end }}
+      </div>
+
+  </div>
+
+  <div>
+        <p class="summary is-size-7 has-text-justified">
+          {{ with .Params.resumen }}{{ . }}
+          {{ else }}{{ with .Summary }}{{ . | plainify | htmlUnescape }}
+          {{ end }}{{ end }}
+          </p>
+  </div>
+
+
+</div>

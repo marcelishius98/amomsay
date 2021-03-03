@@ -1,0 +1,17 @@
+{{ define "title" }}
+  <!-- This will override the default value set in baseof.html; i.e., "{{.Site.Title}}" in the original example-->
+  {{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+{{ define "main" }}
+
+<article class="content" style="border=1px;">
+<div class="is-size-5">
+<h1 id="inicio" class="title is-3 has-text-centered">{{ .Title | title }}</h1>
+</div>
+
+{{ partial "toc.html" .}}
+
+{{ .Content }}
+
+</article>
+{{ end }}

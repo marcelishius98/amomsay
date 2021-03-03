@@ -1,0 +1,67 @@
+<nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href={{ "/" | relURL }}>{{ with .Site.Title }}<strong> {{ . }} </strong>{{ end }}</a>
+    <a title="Ir arriba" class="navbar-item is-warning" href="#"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+    <div class="navbar-item is-hidden-desktop">
+      <p class="buttons">
+        <a href="{{.Site.Params.twitter}}">
+        <button class="button is-warning">
+          <span class="icon">
+            <i class="fa fa-twitter"></i>
+          </span>
+        </button></a>
+        <a href="{{.Site.Params.instagram}}">
+        <button class="button is-warning" href="https://www.instagram.com/_amomsay">
+          <span class="icon">
+            <i class="fa fa-instagram"></i>
+          </span>
+        </button></a>
+      </p>
+    </div>
+    <a href="javascript:void(0);" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" onclick="myFunction()">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+
+
+<div class="navbar-end" id="navMenu">
+  <div class="is-hidden-desktop">
+
+      <div class="navbar-menu" id="navbarBasicExample">
+        {{ $currentPage := . }}
+        <ul class="menu-list">
+          {{ range .Site.Menus.mi_menu_principal }}
+          <li><a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "mi_menu_principal" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a></li>
+        {{ end }}
+        </ul>
+      </div>
+
+  </div>
+</div>
+
+
+
+<div  class="navbar-menu">
+    <div class="navbar-end">
+      <p class="buttons">
+        <a href="{{.Site.Params.twitter}}">
+        <button class="button is-primary">
+          <span class="icon">
+            <i class="fa fa-twitter"></i>
+          </span>
+          <span>@amomsay</span>
+        </button></a>
+        <a href="{{.Site.Params.instagram}}">
+        <button class="button is-primary">
+          <span class="icon">
+            <i class="fa fa-instagram"></i>
+          </span>
+          <span>@_amomsay</span>
+        </button></a>
+      </p>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,36 @@
+<head>
+  <meta name="language" content="{{ .Language.LanguageName }}">
+  {{ range .AllTranslations }}
+  <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
+  {{ end }}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=100, initial-scale=1">
+
+  <title>
+    {{- if not .IsHome }}
+    {{ with .Title | title }}{{ . }} | {{ end }}
+    {{ end }}
+    {{- .Site.Title -}}
+
+  </title>
+  <meta name="keywords" content="{{ .Params.keywords }}" />
+  <meta name="description" content="{{ .Params.description }}" />
+  <meta name="author" content={{.Site.Params.author}} />
+  {{template "_internal/opengraph.html" . }}
+  {{template "_internal/twitter_cards.html" . }}
+  {{partial "schema.html" . }}
+  <link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
+  <meta name="robots" content="index,follow" />
+  <meta name="googlebot" content="index,follow" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+
+  {{ $estilo := resources.Get "estilo.scss" | resources.ToCSS (dict "outputStyle" "compressed") | fingerprint }}
+  <link rel="stylesheet" href="{{ $estilo.Permalink }}">
+
+  <script src="https://kit.fontawesome.com/72b31a5059.js" crossorigin="anonymous" async=""></script>
+
+</head>

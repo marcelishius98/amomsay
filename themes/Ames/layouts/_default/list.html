@@ -1,0 +1,13 @@
+{{ define "main" }}
+<br><br>
+<h1 class="title is-2 has-text-centered">{{ .Title | title }}</h1>
+{{.Content}}
+<hr>
+{{if eq (len .Paginator.Pages) 0}}<br><p class="has-tex-centered" >Disculpa. Aún estamos desarrollando contenido para esta sección.</p>{{end}}
+{{ range .Paginator.Pages.ByWeight }}
+<div class="tile is-parent is horizontal">
+{{- partial "resumen-articulos.html" . -}}
+</div>
+{{ end }}
+{{ partial "paginator.html" . }}
+{{ end }}

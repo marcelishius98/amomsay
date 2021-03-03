@@ -1,0 +1,38 @@
+{{ define "main" }}
+<section class="section">
+{{ $currentSection := .CurrentSection }}
+{{ range $section, $taxonomy := .Site.Sections }}
+{{if eq $taxonomy.Title $currentSection.Title}}
+<h1 class="title is-3 has-text-centered">{{ $taxonomy.Title | title }}</h1>
+{{.Content}}
+<ul>
+{{ range $taxonomy.Pages }}
+<hr>
+<li class="title is-4"><a href="{{ .Permalink}}"> {{ .LinkTitle }} </a> </li>
+{{ .Content }}
+<br>
+{{if eq (len .Paginator.Pages) 0}}<p class="has-tex-centered has-text-info">Disculpa. Aún estamos desarrollando contenido para esta sección.</p>{{end}}
+{{ range .Paginator.Pages.ByWeight | first 5}}
+<article class="media">
+<div class="media-content">
+<a href="{{ .RelPermalink }}">
+<h1 class="title is-6">{{ .Title | title }}</h1>
+</a><div class="level is-mobile details">
+    <div class="level-left">
+    <div class="level-item">
+    <p class="subtitle is-7 info date">
+    {{ partial "traducir-fecha.html" .Date . }}
+    </p>
+    </div>
+    </div>
+    </div>
+  </div>
+</article>
+<br>
+{{ end }}
+{{end}}
+</ul>
+{{ end }}
+{{ partial "pagination.html"}}{{end}}
+</section>
+{{ end }}

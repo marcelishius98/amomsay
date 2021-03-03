@@ -1,0 +1,47 @@
+<div class="tile is-parent is-vertical is-hidden-touch">
+
+  <div class="publicidad-desktop">
+
+    <div class="tile box has-background-link">
+    <div class="tile box">
+      <aside class="menu">
+        <p class="menu-label">Categorías</p>
+        {{ $currentPage := . }}
+          <ul class="menu-list">
+            {{ range .Site.Menus.mi_menu_principal }}
+              <li><a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "mi_menu_principal" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+      </aside>
+    </div>
+    </div>
+
+    <div class="tile box has-background-link">
+    <div class="tile">
+        <div class="tile box has-text-centered">
+          <div class="center">
+            <figure class="image is-48x48 is-inline-block">
+              <img class="is-rounded" src="images/Marcela Hernandez.png" alt="amomsay_avatar">
+            </figure>
+
+              <div class="media-content">
+                <p class="title is-4">Marcela Hernández</p>
+                <p class="subtitle is-6">Mamá, bloggera, profesional y emprendedora.</p>
+              </div>
+    <hr>
+            <div class="content is-6">
+              La razón de crear <strong>"Una Mamá Dice"</Strong> es establecer una red de información
+              acerca de <strong>maternidad, crianza respetuosa, lactancia materna, embarazo</strong>, entre otros;
+              para que las madres puedan encontrar consejos y respuestas a las preguntas que puedan surgir durante su tarea más importante: <strong>ser mamá</Strong>.
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

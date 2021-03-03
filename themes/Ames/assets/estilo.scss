@@ -1,0 +1,32 @@
+$grullo: #b3a394ff;
+$caribbean-green: #37d2a3ff;;
+$medium-aquamarine: #5ed7b5ff;
+$light-coral: #ff8684ff;
+$light-coral2: #ff686bff;
+
+$primary: $light-coral2;
+$warning: $light-coral;
+$info: $medium-aquamarine;
+$success: $caribbean-green;
+$link: $grullo;
+
+@import "estilo.sass";
+@import "scss/fontawesome.scss";
+@import "scss/solid.scss";
+
+.publicidad-desktop {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding-top: 5em;
+  font-size: 1vw;
+  }
+  
+.has-bg-img {
+  background: url("../images/hero-fondo.jpg") center center;
+  background-size: cover;
+  position: relative;
+  z-index: -10;
+  overflow: hidden;
+  opacity: 0.8;
+ }

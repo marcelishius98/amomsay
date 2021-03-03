@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html class="is-fixed-top">
+  {{partial "head.html" . }}
+  <body class="section">
+    {{partial "header.html" . }}
+
+    <div class="tile is-ancestor section">
+      <div class="tile is-vertical is-parent is-8">
+        <div class="tile is-child">
+
+          {{- block "main" . }}{{- end }}
+
+        </div>
+      </div>
+      {{ partial "barra-lateral.html" . }}
+    </div>
+    {{ block "autor" . }}{{end}}
+    {{ block "footer" . }}{{ end }}
+    {{ block "js" . }}{{end}}
+
+  </body>
+
+</html>

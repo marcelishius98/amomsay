@@ -1,0 +1,42 @@
+baseURL = "https://www.amomsay.com/"
+title = "Una Mamá Dice..."
+theme = "Ames"
+
+languageCode = "es-ve"
+DefaultContentLanguage = "es"
+paginate = 4
+
+enableEmoji = true
+enableGitInfo = true
+enableRobotsTXT = true
+canonifyURLs = true
+
+sectionPagesMenu = "mi_menu_principal"
+
+[taxonomies]
+  tag = "tags"
+
+[params]
+  author = "Marcela Hernández"
+  showDate = true
+  github = "https://github.com/marcelishius98"
+  #facebook = "https://facebook.com/amomsay"
+  instagram = "https://instagram.com/amomsay"
+  favicon = "/images/favicon-16x16.png"
+  sitename = "Example Site Name"
+  twitter = "https://twitter.com/amomsay"
+  description = "Información acerca del embarazo, lactancia, crianza respetuosa, consejos y más..."
+  images = ["site-feature-image.jpg"]
+  paginatePostsPerPage = 2
+
+[languages]
+
+[languages.es]
+  languageName = "Español"
+  languageCode = "es"
+  weight = 1
+
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-us"
+    weight = 2

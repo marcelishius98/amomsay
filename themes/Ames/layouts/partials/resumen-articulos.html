@@ -1,0 +1,61 @@
+<div class="tile is-child is-3 section">
+<figure class="image">
+  {{if .Params.imagen_titulo}}
+        <img src="{{.RelPermalink}}{{.Params.imagen_titulo}}" alt="{{.Params.imagen_alt}}" class="image lazyautosizes ls-is-cached lazyloaded">
+  {{else}}
+  <img src="/imagenes/sun_500.png" alt="No hay imagen asignada" class="image lazyautosizes ls-is-cached lazyloaded">
+  {{end}}
+</figure>
+</div>
+<div class="tile is-child">
+<br>
+<a href="{{ .RelPermalink }}">
+<h1 class="title is-4">
+{{ .Title | title }}
+</h1>
+</a>
+<div class="level is-mobile">
+  <div class="level-left">
+  <div class="level-item">
+  <a href="{{ .RelPermalink }}">
+  <p class="subtitle is-7 info date">
+  <strong>
+  {{ partial "fecha.html" .Date . }}
+  </strong>
+  </p>
+  </a>
+  </div>
+  <div class="level-item">
+  <a href="{{ .RelPermalink }}">
+          <strong>
+            <p class="subtitle is-7 info">
+                {{- partial "time-to-read.html" . -}}
+            </p>
+          </strong>
+        </a>
+    </div>
+</div>
+<div class="level-right is-hidden-touch">
+    {{ range .Params.tags }}
+    <a class="tag is-rounded is-success" href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . | title }}</a>
+    {{ end }}
+</div>
+    </div>
+    <div class="content">
+        <p class="summary is-justified">
+        {{ with .Params.resumen }}{{ . }}
+        {{ else }}{{ with .Summary }}{{ . | plainify | htmlUnescape }}
+        {{ end }}{{ end }}
+        </p>
+
+    <div class="level is-mobile continue-reading">
+        <div class="level-left">
+        </div>
+        <div class="level-right">
+            <a href="{{ .RelPermalink }}">Seguir leyendo... <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    </div>
+
+  </div>
+<hr>

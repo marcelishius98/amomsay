@@ -1,0 +1,10 @@
+{{ if and (gt .WordCount 400 ) (.Params.toc)}}
+<hr>
+<nav class="content subtitle is-5">
+  <header>
+  <p class="title is-5">Tabla de Contenido</p>
+  </header>
+    {{.TableOfContents}}
+</nav>
+<hr>
+{{ end }}
