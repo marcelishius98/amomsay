@@ -27,10 +27,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="manifest" href="/images/site.webmanifest">
-
   {{ $estilo := resources.Get "estilo.scss" | resources.ToCSS (dict "outputStyle" "compressed") | fingerprint }}
   <link rel="stylesheet" href="{{ $estilo.Permalink }}">
-
   <script src="https://kit.fontawesome.com/72b31a5059.js" crossorigin="anonymous" async=""></script>
-
+  {{ template "_internal/google_analytics.html" . }}
 </head>

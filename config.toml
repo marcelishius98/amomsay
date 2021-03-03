@@ -28,6 +28,7 @@ sectionPagesMenu = "mi_menu_principal"
   description = "Información acerca del embarazo, lactancia, crianza respetuosa, consejos y más..."
   images = ["site-feature-image.jpg"]
   paginatePostsPerPage = 2
+  googleAnalytics = "UA-264028527"
 
 [languages]
 

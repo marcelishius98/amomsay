@@ -1,7 +1,7 @@
 ---
 date: 2020-12-10T02:07:31+06:00
 title: "¡Hola a todos, soy América!"
-draft: true
+draft: false
 imagen_titulo: "America01.jpg"
 imagen_alt: "descripcion de la foto"
 ---

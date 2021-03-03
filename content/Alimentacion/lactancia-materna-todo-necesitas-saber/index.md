@@ -4,7 +4,7 @@ title: "Lactancia materna: todo lo que necesitas saber"
 description: "Encuentra aquí la importancia, los beneficios y las técnicas para llevar una lactancia materna exitosa."
 keywords: "lactancia, maternidad, bebé, "
 resumen: "La lactancia materna es le mejor regalo que podemos brindarles a nuestros hijos, es la manera natural y más completa de garantizar una buena alimentación, ayudándolos en su desarrollo y ofreciéndoles beneficios a corto, mediano y largo plazo. ¡Conoce todo lo que necesitas saber aquí!"
-draft: true
+draft: false
 imagen_titulo: "lactando01.png"
 imagen_alt: "Bebé lactando"
 toc: true
